@@ -2,13 +2,11 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Dict
-import os
 from dotenv import load_dotenv
 from google.generativeai import types
 from google import generativeai as genai
 from langchain.prompts import PromptTemplate
 import json
-from langchain_groq import ChatGroq
 
 # Load environment variables
 load_dotenv()
