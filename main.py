@@ -116,6 +116,10 @@ prompt_template = PromptTemplate(
     template=RESUME_PROMPT_TEMPLATE,
 )
 
+@app.get("/")
+def welcome():
+    return {"message": "Welcome to the Resume Generator API!"}
+
 @app.post("/generate-resume")
 async def generate_resume(request: ResumeRequest):
     try:
