@@ -132,11 +132,11 @@ async def generate_resume(request: ResumeRequest):
 
         # Generate the resume
         response = llm.generate_content(prompt_str)
-        print(response.text.strip("`").lstrip("json").strip().strip("`"))
+        # print(response.text.strip("`").lstrip("json").strip().strip("`"))
 
         try:
             parsed_data = json.loads(response.text.strip("`").lstrip("json").strip().strip("`"))
-            print(parsed_data)
+            # print(parsed_data)
             return parsed_data
         except json.JSONDecodeError as e:
             raise HTTPException(status_code=500, detail=f"Failed to parse JSON: {str(e)}")
